@@ -1,0 +1,60 @@
+//top module
+module calculator(
+    //reset, start
+    input rst,
+    input st,
+    //option-operand
+    input ad,
+    input su,
+    input mul,
+    input div,
+    input sqr,
+    //input-operator
+    input [7:0] x,
+    input [3:0] y,
+    //output
+    output [4:0] res,
+    output err
+);
+    // 최상위 컨트롤러
+    top_ctrl tc(
+        .rst,
+        .st,
+        .ad,
+        .su,
+        .mul,
+        .div,
+        .sqr,
+    
+        .done, 
+        .res,
+    
+        .ad_,
+        .su_,
+        .mul_,
+        .div_,
+        .sqr_,
+        .err,
+    
+    
+        .res_  //종료시 res 출력.
+
+    );
+    
+    //덧셈/뺄셈 컨트롤러
+    ad_su_ctrl(
+    
+    );
+    
+    //곱셈/나눗셈 컨트롤러
+    mul_div_ctrl(
+    
+    );
+    
+    //ALU & reg.
+    
+
+endmodule
+
+
+

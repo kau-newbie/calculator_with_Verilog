@@ -1,0 +1,20 @@
+
+
+module  ad_su_ctrl(
+    input [7:0] x,
+    input [3:0] y,
+    
+    input is_ad, //ad인지 su인지 구분하는 신호.
+    
+    output reg v,
+    output reg [3:0] res,
+    output reg done
+    
+);
+
+always@(posedge) begin
+    res <= x[3:0] + y;
+    v <= 
+end
+
+endmodule

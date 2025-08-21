@@ -1,0 +1,54 @@
+//top controler
+module top_ctrl(
+    input rst,
+    input st,
+    input ad,
+    input su,
+    input mul,
+    input div,
+    input sqr,
+    
+    input done, // done=1 받고 계산이 종료됐다고 판단.
+    input [4:0] res,
+    
+    output reg ad_,
+    output reg su_,
+    output reg mul_,
+    output reg div_,
+    output reg sqr_,
+    output reg err,
+    
+    
+    output [4:0] res_  //계산산종료시 res reg로부터 출력.
+);
+
+always@(posedge, rst)begin
+    if(rst) begin
+        {ad_, su_, mul_, div_, sqr_, err_} <= 6'b0;
+        res_ <= 5'b0;
+    end
+    else begin
+        if(st) begin
+            if(done) begin
+                res_ <= res;
+            end
+            else res_ <= res_;
+            //adder mode
+            //subtrator mode
+            //multiple mode
+            //division mode
+            ///sqr mode
+            if({ad,su,mul,div,sqr,err}) begin
+                {ad_,su_,mul_,div_,sqr_,err_} <= {ad,su,mul,div,sqr,err};
+            end
+            
+        end
+        else begin
+            {ad_,su_,mul_,div_,sqr_,err_} <= {ad_,su_,mul_,div_,sqr_,err_};
+            res_ <= res_;
+        end
+    end
+end
+
+
+endmodule
