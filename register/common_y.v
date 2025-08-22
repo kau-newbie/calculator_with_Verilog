@@ -46,7 +46,7 @@ always@(posedge clk or posedge rst)begin
                 {to_ALU, to_multiplier, to_divisor} <= {4'b0, y[3:0], 4'b0};
             end
             toDIV : begin
-                {to_ALU, to_multiplier, to_divisor} <= {4'b0, 4'b0, y[0], y[1], y[2], y[3] };
+                {to_ALU, to_multiplier, to_divisor} <= {4'b0, 4'b0, y[3:0] };
             end
             toSQR :begin
                 {to_ALU, to_multiplier, to_divisor} <= {to_ALU, to_multiplier, to_divisor};
