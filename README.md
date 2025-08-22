@@ -1,6 +1,6 @@
 # verilog HDL로 계산기를 만드는 프로젝트.
 
-- [ x ] schema
+- [x] schema
 - [ ] top controler
 - [ ] sub controlers(mode)
 - [ ] registers
