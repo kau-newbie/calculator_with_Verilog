@@ -1,7 +1,11 @@
-verilog HDL로 계산기를 만드는 프로젝트.
+# verilog HDL로 계산기를 만드는 프로젝트.
 
-덧셈/뺄셈/곱셈/나눗셈에 root계산 기능까지 넣을 예정.
+- [ x ] schema
+- [ ] top controler
+- [ ] sub controlers(mode)
+- [ ] registers
 
-자세한 과정은,
+
+자세한 과정은 아래 블로그에 올려뒀습니다.
 
 https://kau-newbie.github.io/

@@ -33,13 +33,14 @@ always@(posedge clk)begin
 end
 // done신호는 critical path를 지날떄의 delay보다 
 // 1 clock period가 더 길게끔 설정해줘 해결한다.
-always@(posedge clk, rst)begin
+// ==> 한 개의 쉬어가는 state를 만들어준다.
+always@(posedge clk or posedge rst)begin
     if(rst)begin
         {ld_x, ld_y, ld_y2c, v_, ld_res, done} <= 6'b000000;
     end
     else begin
         //initializing : S0
-        {ld_x, ld_y, ld_y2c, v_, ld_res, done} <= 6'b000000;
+        {ld_x, ld_y, ld_y2c, v_, ld_res, done} = 6'b000000;
         //3'b000일때 : S1
         if({ld_x, ld_y, ld_y2c} == 3'b000)begin    
             if({ad,su}==2'b10)begin

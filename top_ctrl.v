@@ -1,6 +1,8 @@
 module top_ctrl(
     //비동기 입력.
     input rst,
+    //clock.
+    input clk,
     //start. 시작 이후에 mode선택이 이루어진다.
     input st,
     //mode 
