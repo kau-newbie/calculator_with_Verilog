@@ -43,7 +43,7 @@ always@(posedge clk, rst)begin
         //3'b000일때 : S1
         if({ld_x, ld_y, ld_y2c} == 3'b000)begin    
             if({ad,su}==2'b10)begin
-                {ld_x, ld_y, ld_yc2} <= 3'b110;
+                {ld_x, ld_y, ld_y2c} <= 3'b110;
             end
             else if({ad,su}==2'b01)begin
                 {ld_x, ld_y, ld_y2c} <= 3'b101;
