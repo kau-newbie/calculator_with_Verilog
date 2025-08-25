@@ -1,19 +1,19 @@
 module sub_res(
     //input clk
     input clk,
-    //subtractor로부터 오는 신호.
-    input ld_subres,
-    input [3:0] subres,
+   
+    //adder나 subtractor로부터 오는 신호.
+    input ld_subres, //아래 값을 로드시키라는 adder로부터의 신호.
+    input [4:0] subres, //adder로부터 온 중간결과값.
+    
     //중간 결과를(빼고 남은 결과) ld해준다.
-    output reg[3:0] subres_
+    output reg[4:0] subres_
 );
 
 always@(posedge clk)begin
+    subres_ = 5'b00000;
     if(ld_subres)begin
-        subres_ <= {subres[0],subres[1],subres[2],subres[3]}; //ld 할 때 역방향으로 넣어준다.
-    end
-    else begin
-        subres_ <= subres_;
+        subres_ <= subres;
     end
 end
 
